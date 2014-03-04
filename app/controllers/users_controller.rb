@@ -33,20 +33,29 @@ class UsersController < ApplicationController
   def update
   	@user = current_user.admin? ? User.find(params[:id]) : current_user
 		if user = User.authenticate(@user.username, params[:user][:password])
-			if params[:user][:password_new].present? && params[:user][:password_new] == params[:user][:password_new_confirmation]
-				if @user.update( email: params[:user][:email], admin: params[:user][:admin], password: params[:user][:password_new] )
-	  			if current_user.admin
-	  				redirect_to users_path, notice: "User #{@user.username} update successfully!"
-	  			else
-	  				redirect_to root_path, notice: "User #{@user.username} update successfully!"
-	  			end
-	  		else
-	  			flash.now[:alert] = "User update fail"
-					render :edit
-	  		end
+			if params[:user][:password_new].present?
+        if params[:user][:password_new] == params[:user][:password_new_confirmation]
+  				if @user.update( email: params[:user][:email], password: params[:user][:password_new] )
+  	  			if current_user.admin
+  	  				redirect_to users_path, notice: "User #{@user.username} update successfully!"
+  	  			else
+  	  				redirect_to root_path, notice: "User #{@user.username} update successfully!"
+  	  			end
+  	  		else
+  	  			flash.now[:alert] = "User update fail"
+  					render :edit
+  	  		end
+        else
+          flash.now[:alert] = "Two new password is not the same."
+          render :edit
+        end
 	  	else
-	  		flash.now[:alert] = "User update fail"
-				render :edit
+	  		@user.update(email: params[:user][:email])
+        if current_user.admin
+          redirect_to users_path, notice: "User #{@user.username} update successfully!"
+        else
+          redirect_to root_path, notice: "User #{@user.username} update successfully!"
+        end
 			end
   	else
       flash.now[:alert] = "User update fail"
