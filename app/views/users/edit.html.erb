@@ -24,7 +24,11 @@
     <div class="uk-form-row">
     	<%= f.label :admin, class: "uk-form-label" %>
     	<div class="uk-form-controls">
-    		<%= f.select :admin, [['Admin', true], ['Common User', false]],{}, class: "uk-form-small", disabled: true %>
+            <% if current_user.admin && User.where(admin: true).count >= 1 && @user != current_user %>
+                <%= f.select :admin, [['Admin', true], ['Common User', false]],{}, class: "uk-form-small" %>
+            <% else %>
+                <%= f.select :admin, [['Admin', true], ['Common User', false]],{}, class: "uk-form-small", disabled: true %>
+            <% end %>
     	</div>
     </div>
 

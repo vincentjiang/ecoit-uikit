@@ -35,7 +35,7 @@ class UsersController < ApplicationController
 		if user = User.authenticate(@user.username, params[:user][:password])
 			if params[:user][:password_new].present?
         if params[:user][:password_new] == params[:user][:password_new_confirmation]
-  				if @user.update( email: params[:user][:email], password: params[:user][:password_new] )
+  				if @user.update( email: params[:user][:email], admin: params[:user][:admin], password: params[:user][:password_new] )
   	  			if current_user.admin
   	  				redirect_to users_path, notice: "User #{@user.username} update successfully!"
   	  			else
@@ -50,7 +50,7 @@ class UsersController < ApplicationController
           render :edit
         end
 	  	else
-	  		@user.update(email: params[:user][:email])
+	  		@user.update(email: params[:user][:email], admin: params[:user][:admin])
         if current_user.admin
           redirect_to users_path, notice: "User #{@user.username} update successfully!"
         else
