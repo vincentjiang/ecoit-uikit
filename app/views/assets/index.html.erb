@@ -1,4 +1,4 @@
-<% provide :title, "Users List" %>
+<% provide :title, "Assets List" %>
 
 <div id="users-list" class="uk-container uk-container-center">
 	
@@ -6,24 +6,23 @@
     
     <div class="uk-width-medium-1-4">
 
-      <%= render 'users/sidebar' %>
+      <%= render 'assets/sidebar' %>
 
     </div>
 
 
     <div class="eco-main uk-width-medium-3-4">
-			<h1><i class="uk-icon-users"></i> Users List</h1>
+			<h1><i class="uk-icon-users"></i> Assets List</h1>
 			<table class="uk-table uk-table-hover uk-table-striped uk-table-condensed">
 				<thead>
 					<tr>
-						<td>Username</td>
-						<td>Email</td>
-						<td>Role</td>
+						<td>Kind</td>
+						<td>Qty</td>
 						<td>Action</td>
 					</tr>
 				</thead>
 				<tbody>
-					<%= render @users %>
+					
 				</tbody>
 			</table>
     </div>

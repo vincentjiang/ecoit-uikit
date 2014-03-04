@@ -2,6 +2,7 @@ Ecoit::Application.routes.draw do
 
   get "index" => 'pages#index'
   get "help" => 'pages#help'
+  get 'assets' => 'assets#index'
   
   resources :sessions, only: [:new, :create, :destroy]
   get 'login' => "sessions#new"
