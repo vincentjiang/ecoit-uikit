@@ -11,7 +11,64 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140303022538) do
+ActiveRecord::Schema.define(version: 20140304081955) do
+
+  create_table "network_devices", force: true do |t|
+    t.string   "name"
+    t.string   "ip"
+    t.string   "kind"
+    t.string   "place"
+    t.string   "position"
+    t.string   "sn"
+    t.date     "service_expired_day"
+    t.text     "function"
+    t.text     "remark"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "servers", force: true do |t|
+    t.string   "name"
+    t.string   "ip"
+    t.string   "ilo"
+    t.string   "brand"
+    t.string   "model"
+    t.string   "sn"
+    t.string   "cup"
+    t.string   "ram"
+    t.string   "local_disk"
+    t.string   "os"
+    t.string   "place"
+    t.string   "position"
+    t.date     "service_expired_day"
+    t.text     "function"
+    t.text     "remark"
+    t.integer  "user_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "softwares", force: true do |t|
+    t.string   "name"
+    t.string   "kind"
+    t.string   "sn"
+    t.date     "service_expired_day"
+    t.text     "function"
+    t.text     "remark"
+    t.integer  "user_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "systems", force: true do |t|
+    t.string   "name"
+    t.string   "link"
+    t.string   "username"
+    t.string   "password"
+    t.integer  "user_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "users", force: true do |t|
     t.string   "username"
