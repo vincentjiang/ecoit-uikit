@@ -1,0 +1,81 @@
+<%= form_for(@server) do |f| %>
+  <% if @server.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@server.errors.count, "error") %> prohibited this server from being saved:</h2>
+
+      <ul>
+      <% @server.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :name %><br>
+    <%= f.text_field :name %>
+  </div>
+  <div class="field">
+    <%= f.label :ip %><br>
+    <%= f.text_field :ip %>
+  </div>
+  <div class="field">
+    <%= f.label :ilo %><br>
+    <%= f.text_field :ilo %>
+  </div>
+  <div class="field">
+    <%= f.label :brand %><br>
+    <%= f.text_field :brand %>
+  </div>
+  <div class="field">
+    <%= f.label :model %><br>
+    <%= f.text_field :model %>
+  </div>
+  <div class="field">
+    <%= f.label :sn %><br>
+    <%= f.text_field :sn %>
+  </div>
+  <div class="field">
+    <%= f.label :cup %><br>
+    <%= f.text_field :cup %>
+  </div>
+  <div class="field">
+    <%= f.label :ram %><br>
+    <%= f.text_field :ram %>
+  </div>
+  <div class="field">
+    <%= f.label :local_disk %><br>
+    <%= f.text_field :local_disk %>
+  </div>
+  <div class="field">
+    <%= f.label :os %><br>
+    <%= f.text_field :os %>
+  </div>
+  <div class="field">
+    <%= f.label :place %><br>
+    <%= f.text_field :place %>
+  </div>
+  <div class="field">
+    <%= f.label :position %><br>
+    <%= f.text_field :position %>
+  </div>
+  <div class="field">
+    <%= f.label :service_expired_day %><br>
+    <%= f.date_select :service_expired_day %>
+  </div>
+  <div class="field">
+    <%= f.label :function %><br>
+    <%= f.text_area :function %>
+  </div>
+  <div class="field">
+    <%= f.label :remark %><br>
+    <%= f.text_area :remark %>
+  </div>
+  <div class="field">
+    <%= f.label :user_id %><br>
+    <%= f.number_field :user_id %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

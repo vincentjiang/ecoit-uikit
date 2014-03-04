@@ -1,0 +1,45 @@
+<h1>Listing network_devices</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Ip</th>
+      <th>Kind</th>
+      <th>Place</th>
+      <th>Position</th>
+      <th>Sn</th>
+      <th>Service expired day</th>
+      <th>Function</th>
+      <th>Remark</th>
+      <th>User</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @network_devices.each do |network_device| %>
+      <tr>
+        <td><%= network_device.name %></td>
+        <td><%= network_device.ip %></td>
+        <td><%= network_device.kind %></td>
+        <td><%= network_device.place %></td>
+        <td><%= network_device.position %></td>
+        <td><%= network_device.sn %></td>
+        <td><%= network_device.service_expired_day %></td>
+        <td><%= network_device.function %></td>
+        <td><%= network_device.remark %></td>
+        <td><%= network_device.user_id %></td>
+        <td><%= link_to 'Show', network_device %></td>
+        <td><%= link_to 'Edit', edit_network_device_path(network_device) %></td>
+        <td><%= link_to 'Destroy', network_device, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Network device', new_network_device_path %>

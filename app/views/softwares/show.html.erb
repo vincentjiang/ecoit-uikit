@@ -1,0 +1,39 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @software.name %>
+</p>
+
+<p>
+  <strong>Kind:</strong>
+  <%= @software.kind %>
+</p>
+
+<p>
+  <strong>Sn:</strong>
+  <%= @software.sn %>
+</p>
+
+<p>
+  <strong>Service expired day:</strong>
+  <%= @software.service_expired_day %>
+</p>
+
+<p>
+  <strong>Function:</strong>
+  <%= @software.function %>
+</p>
+
+<p>
+  <strong>Remark:</strong>
+  <%= @software.remark %>
+</p>
+
+<p>
+  <strong>User:</strong>
+  <%= @software.user_id %>
+</p>
+
+<%= link_to 'Edit', edit_software_path(@software) %> |
+<%= link_to 'Back', softwares_path %>

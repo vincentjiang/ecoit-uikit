@@ -1,0 +1,57 @@
+<%= form_for(@network_device) do |f| %>
+  <% if @network_device.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@network_device.errors.count, "error") %> prohibited this network_device from being saved:</h2>
+
+      <ul>
+      <% @network_device.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :name %><br>
+    <%= f.text_field :name %>
+  </div>
+  <div class="field">
+    <%= f.label :ip %><br>
+    <%= f.text_field :ip %>
+  </div>
+  <div class="field">
+    <%= f.label :kind %><br>
+    <%= f.text_field :kind %>
+  </div>
+  <div class="field">
+    <%= f.label :place %><br>
+    <%= f.text_field :place %>
+  </div>
+  <div class="field">
+    <%= f.label :position %><br>
+    <%= f.text_field :position %>
+  </div>
+  <div class="field">
+    <%= f.label :sn %><br>
+    <%= f.text_field :sn %>
+  </div>
+  <div class="field">
+    <%= f.label :service_expired_day %><br>
+    <%= f.date_select :service_expired_day %>
+  </div>
+  <div class="field">
+    <%= f.label :function %><br>
+    <%= f.text_area :function %>
+  </div>
+  <div class="field">
+    <%= f.label :remark %><br>
+    <%= f.text_area :remark %>
+  </div>
+  <div class="field">
+    <%= f.label :user_id %><br>
+    <%= f.number_field :user_id %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @system.name %>
+</p>
+
+<p>
+  <strong>Link:</strong>
+  <%= @system.link %>
+</p>
+
+<p>
+  <strong>Username:</strong>
+  <%= @system.username %>
+</p>
+
+<p>
+  <strong>Password:</strong>
+  <%= @system.password %>
+</p>
+
+<p>
+  <strong>User:</strong>
+  <%= @system.user_id %>
+</p>
+
+<%= link_to 'Edit', edit_system_path(@system) %> |
+<%= link_to 'Back', systems_path %>

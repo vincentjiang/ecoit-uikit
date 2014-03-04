@@ -1,0 +1,54 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @network_device.name %>
+</p>
+
+<p>
+  <strong>Ip:</strong>
+  <%= @network_device.ip %>
+</p>
+
+<p>
+  <strong>Kind:</strong>
+  <%= @network_device.kind %>
+</p>
+
+<p>
+  <strong>Place:</strong>
+  <%= @network_device.place %>
+</p>
+
+<p>
+  <strong>Position:</strong>
+  <%= @network_device.position %>
+</p>
+
+<p>
+  <strong>Sn:</strong>
+  <%= @network_device.sn %>
+</p>
+
+<p>
+  <strong>Service expired day:</strong>
+  <%= @network_device.service_expired_day %>
+</p>
+
+<p>
+  <strong>Function:</strong>
+  <%= @network_device.function %>
+</p>
+
+<p>
+  <strong>Remark:</strong>
+  <%= @network_device.remark %>
+</p>
+
+<p>
+  <strong>User:</strong>
+  <%= @network_device.user_id %>
+</p>
+
+<%= link_to 'Edit', edit_network_device_path(@network_device) %> |
+<%= link_to 'Back', network_devices_path %>

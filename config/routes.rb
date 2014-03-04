@@ -9,6 +9,10 @@ Ecoit::Application.routes.draw do
   delete 'logout' => "sessions#destroy"
 
   resources :users, except: :show
+  resources :servers
+  resources :softwares
+  resources :network_devices
+  resources :systems
   
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

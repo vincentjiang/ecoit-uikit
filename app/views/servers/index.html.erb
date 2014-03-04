@@ -1,0 +1,57 @@
+<h1>Listing servers</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Ip</th>
+      <th>Ilo</th>
+      <th>Brand</th>
+      <th>Model</th>
+      <th>Sn</th>
+      <th>Cup</th>
+      <th>Ram</th>
+      <th>Local disk</th>
+      <th>Os</th>
+      <th>Place</th>
+      <th>Position</th>
+      <th>Service expired day</th>
+      <th>Function</th>
+      <th>Remark</th>
+      <th>User</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @servers.each do |server| %>
+      <tr>
+        <td><%= server.name %></td>
+        <td><%= server.ip %></td>
+        <td><%= server.ilo %></td>
+        <td><%= server.brand %></td>
+        <td><%= server.model %></td>
+        <td><%= server.sn %></td>
+        <td><%= server.cup %></td>
+        <td><%= server.ram %></td>
+        <td><%= server.local_disk %></td>
+        <td><%= server.os %></td>
+        <td><%= server.place %></td>
+        <td><%= server.position %></td>
+        <td><%= server.service_expired_day %></td>
+        <td><%= server.function %></td>
+        <td><%= server.remark %></td>
+        <td><%= server.user_id %></td>
+        <td><%= link_to 'Show', server %></td>
+        <td><%= link_to 'Edit', edit_server_path(server) %></td>
+        <td><%= link_to 'Destroy', server, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Server', new_server_path %>

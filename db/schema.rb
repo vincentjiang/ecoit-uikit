@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140304081955) do
+ActiveRecord::Schema.define(version: 20140304092352) do
 
   create_table "network_devices", force: true do |t|
     t.string   "name"
@@ -23,6 +23,7 @@ ActiveRecord::Schema.define(version: 20140304081955) do
     t.date     "service_expired_day"
     t.text     "function"
     t.text     "remark"
+    t.integer  "user_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
