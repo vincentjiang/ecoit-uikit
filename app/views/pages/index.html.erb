@@ -1,0 +1,11 @@
+<div id="root-index" class="uk-container uk-container-center uk-text-center">
+
+    <h1>ECO IT System</h1>
+
+    <p class="uk-text-large">An IT System for improving work efficiency</p>
+		
+		<% unless session[:user_id] %>
+    	<a class="uk-button uk-button-large uk-button-primary" href="<%= login_path %>">Login System <i class="uk-icon-sign-in"></i></a>
+    <% end %>
+
+</div>

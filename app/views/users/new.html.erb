@@ -1,0 +1,56 @@
+<% provide :title, "New User" %>
+
+<div class="uk-container uk-container-center">
+	<h1><i class="uk-icon-user"></i> New User</h1>
+
+    <hr>
+
+	<%= form_for @user, html: { class: "uk-form uk-form-horizontal" } do |f| %>
+
+
+    <div class="uk-form-row">
+    	<%= f.label :username, class: "uk-form-label" %>
+    	<div class="uk-form-controls">
+    		<%= f.text_field :username, placeholder: "Your Name", required: true %><span class="uk-form-help-inline">Username will be auto downcase.</span>
+    	</div>
+    </div>
+
+    <div class="uk-form-row">
+    	<%= f.label :email, class: "uk-form-label" %>
+    	<div class="uk-form-controls">
+    		<%= f.email_field :email, placeholder: "yourname@example.com", required: true, class: "uk-form-width-medium" %>
+    	</div>
+    </div>
+
+    <div class="uk-form-row">
+    	<%= f.label :admin, class: "uk-form-label" %>
+    	<div class="uk-form-controls">
+    		<%= f.select :admin, [['Admin', true], ['Common User', false]],{}, class: "uk-form-small" %>
+    	</div>
+    </div>
+
+    <div class="uk-form-row">
+    	<%= f.label :password, class: "uk-form-label" %>
+    	<div class="uk-form-controls">
+    		<%= f.password_field :password %>
+    	</div>
+    </div>
+
+    <div class="uk-form-row">
+    	<%= f.label :password_confirmation, class: "uk-form-label" %>
+    	<div class="uk-form-controls">
+    		<%= f.password_field :password_confirmation %>
+    	</div>
+    </div>
+
+    <br>
+    <br>
+
+	<div class="uk-form-row">
+		<%= f.submit class: "uk-button uk-button-primary" %>
+		<%= link_to 'Back', users_path, class: "uk-button uk-button-link" %>
+	</div>
+	
+	<% end %>
+
+</div>

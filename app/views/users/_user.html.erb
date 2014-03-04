@@ -1,0 +1,15 @@
+<tr>
+	<td><%= user.username %></td>
+	<td><%= user.email %></td>
+	<td><%= user.admin? ? "Admin" : "Common User" %></td>
+	<td>
+		<%= link_to edit_user_path(user), class: "uk-button uk-button-mini uk-button-primary" do %>
+			<i class="uk-icon-pencil"></i>
+		<% end %>
+		<% unless user == current_user %>
+			<%= link_to user, method: :delete, data: { confirm: "Are you sure to delete user #{user.username} ?" } , class: "uk-button uk-button-mini uk-button-danger" do %>
+			<i class="uk-icon-trash-o"></i>
+			<% end %>
+		<% end %>
+	</td>
+</tr>

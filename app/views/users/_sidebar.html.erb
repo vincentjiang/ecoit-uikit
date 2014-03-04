@@ -1,0 +1,20 @@
+<ul class="uk-nav uk-width-2-3 uk-text-center">
+
+	<li>
+  	<form class="uk-search" data-uk-search="{source:'my-results.json'}">
+	    <input class="uk-search-field" type="search" placeholder="Search">
+	    <button class="uk-search-close" type="reset"></button>
+		</form>
+  </li>
+
+  <br>
+
+  <li>
+  	<%= link_to new_user_path, class: "uk-button uk-button-large uk-button-primary" do %>
+  	New User <i class="uk-icon-arrow-circle-right"></i>
+  	<% end %>
+  </li>
+
+  <br>
+
+</ul>
