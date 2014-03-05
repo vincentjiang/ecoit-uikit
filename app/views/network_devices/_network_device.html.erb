@@ -1,0 +1,18 @@
+<tr>
+  <td><%= network_device.name %></td>
+  <td><%= network_device.kind %></td>
+  <td><%= network_device.ip %></td>
+  <td><%= network_device.sn %></td>
+  <td><%= network_device.service_expired_day %></td>
+  <td>
+    <%= link_to network_device, class: "uk-button uk-button-success uk-button-mini" do %>
+      <i class="uk-icon-eye"></i>
+    <% end %>
+    <%= link_to edit_network_device_path(network_device), class: "uk-button uk-button-primary uk-button-mini" do %>
+      <i class="uk-icon-pencil"></i>
+    <% end %>
+    <%= link_to network_device, method: :delete, data: { confirm: "Are you sure to delete network_device #{network_device.name} ?" }, class: "uk-button uk-button-danger uk-button-mini" do %>
+      <i class="uk-icon-trash-o"></i>
+    <% end %>
+  </td>
+</tr>

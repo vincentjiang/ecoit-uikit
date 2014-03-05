@@ -1,4 +1,9 @@
 class User < ActiveRecord::Base
+	has_many :servers
+	has_many :softwares
+	has_many :network_devices
+	has_many :systems
+	
 	before_save :username_downcase
 
 	attr_reader :password, :password_confirmation

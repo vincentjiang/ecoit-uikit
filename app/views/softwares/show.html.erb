@@ -1,39 +1,59 @@
-<p id="notice"><%= notice %></p>
+<%= provide :title, "Software-#{@software.name}" %>
 
-<p>
-  <strong>Name:</strong>
-  <%= @software.name %>
-</p>
+<h1>Show software</h1>
 
-<p>
-  <strong>Kind:</strong>
-  <%= @software.kind %>
-</p>
+<hr>
 
-<p>
-  <strong>Sn:</strong>
-  <%= @software.sn %>
-</p>
+<dl class="uk-grid">
+  <div class="uk-width-medium-1-4">
+    <dt>Software Name</dt>
+    <dd><%= @software.name %></dd>
+  </div>
+  <div class="uk-width-medium-1-4">  
+    <dt>Operation system</dt>
+    <dd><%= @software.kind %></dd>
+  </div>
+</dl>
 
-<p>
-  <strong>Service expired day:</strong>
-  <%= @software.service_expired_day %>
-</p>
+<dl class="uk-grid">
+  <div class="uk-width-medium-1-4">
+    <dt>Serial number</dt>
+    <dd><%= @software.sn %></dd>
+  </div>
+  <div class="uk-width-medium-1-4">  
+    <dt>Service expired day</dt>
+    <dd><%= @software.service_expired_day %></dd>
+  </div>
+</dl>
 
-<p>
-  <strong>Function:</strong>
-  <%= @software.function %>
-</p>
+<% if @software.function.present? %>
+  <dl class="uk-grid">
+    <div class="uk-width-medium-1-2">
+      <dt>Function</dt>
+      <dd><%= @software.function %></dd>
+    </div>
+  </dl>
+<% end %>
 
-<p>
-  <strong>Remark:</strong>
-  <%= @software.remark %>
-</p>
+<% if @software.remark.present? %>
+  <dl class="uk-grid">
+    <div class="uk-width-medium-1-2">
+      <dt>Remark</dt>
+      <dd><%= @software.remark %></dd>
+    </div>
+  </dl>
+<% end %>
 
-<p>
-  <strong>User:</strong>
-  <%= @software.user_id %>
-</p>
+<dl class="uk-grid">
+  <div class="uk-width-medium-1-4">
+    <dt>Create by</dt>
+    <dd><%= @software.user.username %></dd>
+  </div>
+</dl>
 
-<%= link_to 'Edit', edit_software_path(@software) %> |
-<%= link_to 'Back', softwares_path %>
+<br>
+
+<%= link_to edit_software_path(@software), class: "uk-button uk-button-success" do %>
+  Edit <i class="uk-icon-pencil"></i>
+<% end %>
+<%= link_to 'Back', softwares_path, class: "uk-button uk-button-link" %>

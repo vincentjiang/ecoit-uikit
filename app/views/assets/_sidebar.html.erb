@@ -1,10 +1,12 @@
-<ul class="uk-nav uk-width-2-3 uk-text-center">
+<ul class="uk-nav">
 
 	<li>
-  	<form class="uk-search" data-uk-search="{source:'my-results.json'}">
-	    <input class="uk-search-field" type="search" placeholder="Search">
-	    <button class="uk-search-close" type="reset"></button>
-		</form>
+  	<%= render 'share/search' %>
   </li>
+  <li class="uk-nav-header">Assets</li>
+  <li id="servers"><a href="<%= servers_path %>">Servers</a></li>
+  <li id="softwares"><a href="<%= softwares_path %>">Softwares</a></li>
+  <li id="network-devices"><a href="<%= network_devices_path %>">Netword devices</a></li>
+  <li id="systems"><a href="<%= systems_path %>">Systems</a></li>
 
 </ul>

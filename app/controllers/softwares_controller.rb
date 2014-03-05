@@ -25,6 +25,7 @@ class SoftwaresController < ApplicationController
   # POST /softwares.json
   def create
     @software = Software.new(software_params)
+    @software.user_id = current_user.id
 
     respond_to do |format|
       if @software.save

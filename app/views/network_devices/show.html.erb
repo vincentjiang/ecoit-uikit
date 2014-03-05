@@ -1,54 +1,66 @@
-<p id="notice"><%= notice %></p>
+<%= provide :title, "network device | #{@network_device.name}" %>
 
-<p>
-  <strong>Name:</strong>
-  <%= @network_device.name %>
-</p>
+<h1>Show network device</h1>
 
-<p>
-  <strong>Ip:</strong>
-  <%= @network_device.ip %>
-</p>
+<hr>
 
-<p>
-  <strong>Kind:</strong>
-  <%= @network_device.kind %>
-</p>
+<dl class="uk-grid">
+  <div class="uk-width-medium-1-4">
+    <dt>Network device Name</dt>
+    <dd><%= @network_device.name %></dd>
+  </div>
+  <div class="uk-width-medium-1-4">  
+    <dt>Operation kind</dt>
+    <dd><%= @network_device.kind %></dd>
+  </div>
+</dl>
 
-<p>
-  <strong>Place:</strong>
-  <%= @network_device.place %>
-</p>
+<dl class="uk-grid">
+  <div class="uk-width-medium-1-4">
+    <dt>IP Address</dt>
+    <dd><%= @network_device.ip %></dd>
+  </div>
+</dl>
 
-<p>
-  <strong>Position:</strong>
-  <%= @network_device.position %>
-</p>
+<dl class="uk-grid">
+  <div class="uk-width-medium-1-4">
+    <dt>Place</dt>
+    <dd><%= @network_device.place %></dd>
+  </div>
+  <div class="uk-width-medium-1-4">  
+    <dt>Position</dt>
+    <dd><%= @network_device.position %></dd>
+  </div>
+</dl>
 
-<p>
-  <strong>Sn:</strong>
-  <%= @network_device.sn %>
-</p>
+<% if @network_device.function.present? %>
+  <dl class="uk-grid">
+    <div class="uk-width-medium-1-2">
+      <dt>Function</dt>
+      <dd><%= @network_device.function %></dd>
+    </div>
+  </dl>
+<% end %>
 
-<p>
-  <strong>Service expired day:</strong>
-  <%= @network_device.service_expired_day %>
-</p>
+<% if @network_device.remark.present? %>
+  <dl class="uk-grid">
+    <div class="uk-width-medium-1-2">
+      <dt>Remark</dt>
+      <dd><%= @network_device.remark %></dd>
+    </div>
+  </dl>
+<% end %>
 
-<p>
-  <strong>Function:</strong>
-  <%= @network_device.function %>
-</p>
+<dl class="uk-grid">
+  <div class="uk-width-medium-1-4">
+    <dt>Create by</dt>
+    <dd><%= @network_device.user.username %></dd>
+  </div>
+</dl>
 
-<p>
-  <strong>Remark:</strong>
-  <%= @network_device.remark %>
-</p>
+<br>
 
-<p>
-  <strong>User:</strong>
-  <%= @network_device.user_id %>
-</p>
-
-<%= link_to 'Edit', edit_network_device_path(@network_device) %> |
-<%= link_to 'Back', network_devices_path %>
+<%= link_to edit_network_device_path(@network_device), class: "uk-button uk-button-success" do %>
+  Edit <i class="uk-icon-pencil"></i>
+<% end %>
+<%= link_to 'Back', network_devices_path, class: "uk-button uk-button-link" %>

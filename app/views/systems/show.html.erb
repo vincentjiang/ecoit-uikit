@@ -1,29 +1,44 @@
-<p id="notice"><%= notice %></p>
+<%= provide :title, "System-#{@system.name}" %>
 
-<p>
-  <strong>Name:</strong>
-  <%= @system.name %>
-</p>
+<h1>Show system</h1>
 
-<p>
-  <strong>Link:</strong>
-  <%= @system.link %>
-</p>
+<hr>
 
-<p>
-  <strong>Username:</strong>
-  <%= @system.username %>
-</p>
+<dl class="uk-grid">
+  <div class="uk-width-medium-2-5">
+    <dt>system Name</dt>
+    <dd><%= @system.name %></dd>
+  </div>
+</dl>
 
-<p>
-  <strong>Password:</strong>
-  <%= @system.password %>
-</p>
+<dl class="uk-grid">
+  <div class="uk-width-medium-3-5">
+    <dt>system Name</dt>
+    <dd><%= @system.link %></dd>
+  </div>
+</dl>
 
-<p>
-  <strong>User:</strong>
-  <%= @system.user_id %>
-</p>
+<dl class="uk-grid">
+  <div class="uk-width-medium-1-4">
+    <dt>system Name</dt>
+    <dd><%= @system.username %></dd>
+  </div>
+  <div class="uk-width-medium-1-4">  
+    <dt>Operation system</dt>
+    <dd><%= @system.password %></dd>
+  </div>
+</dl>
 
-<%= link_to 'Edit', edit_system_path(@system) %> |
-<%= link_to 'Back', systems_path %>
+<dl class="uk-grid">
+  <div class="uk-width-medium-1-4">
+    <dt>Create by</dt>
+    <dd><%= @system.user.username %></dd>
+  </div>
+</dl>
+
+<br>
+
+<%= link_to edit_system_path(@system), class: "uk-button uk-button-success" do %>
+  Edit <i class="uk-icon-pencil"></i>
+<% end %>
+<%= link_to 'Back', systems_path, class: "uk-button uk-button-link" %>

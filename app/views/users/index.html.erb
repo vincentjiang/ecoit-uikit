@@ -6,7 +6,7 @@
     
     <div class="uk-width-medium-1-4">
 
-      <%= render 'users/sidebar' %>
+      <%= render 'sidebar' %>
 
     </div>
 
@@ -16,16 +16,22 @@
 			<table class="uk-table uk-table-hover uk-table-striped uk-table-condensed">
 				<thead>
 					<tr>
-						<td>Username</td>
-						<td>Email</td>
-						<td>Role</td>
-						<td>Action</td>
+						<th>Username</th>
+						<th>Email</th>
+						<th>Role</th>
+						<th>Action</th>
 					</tr>
 				</thead>
 				<tbody>
 					<%= render @users %>
 				</tbody>
 			</table>
+
+			<br>
+
+			<%= link_to new_user_path, class: "uk-button uk-button-large uk-button-success" do %>
+		  	New User <i class="uk-icon-arrow-circle-right"></i>
+		  <% end %>
     </div>
 	</div>
 </div>

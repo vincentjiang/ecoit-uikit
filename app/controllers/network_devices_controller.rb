@@ -25,6 +25,7 @@ class NetworkDevicesController < ApplicationController
   # POST /network_devices.json
   def create
     @network_device = NetworkDevice.new(network_device_params)
+    @network_device.user_id = current_user.id
 
     respond_to do |format|
       if @network_device.save

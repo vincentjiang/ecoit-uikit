@@ -4,7 +4,7 @@
 	
 	<div class="uk-grid">
     
-    <div class="uk-width-medium-1-4">
+    <div class="eco-sidebar uk-width-medium-1-4">
 
       <%= render 'assets/sidebar' %>
 
@@ -16,38 +16,22 @@
 			<table class="uk-table uk-table-hover uk-table-striped uk-table-condensed">
 				<thead>
 					<tr>
-						<td>Kind</td>
-						<td>Qty</td>
-						<td>Detail</td>
+						<th>Kind</th>
+						<th>Qty</th>
 					</tr>
 				</thead>
 				<tbody>
 					<tr>
 						<td>Server</td>
 						<td><%= servers_qty %></td>
-						<td>
-							<%= link_to servers_path, class: "uk-button uk-button-mini uk-button-primary" do %>
-								<i class="uk-icon-eye"></i>
-							<% end %>
-						</td>
 					</tr>
 					<tr>
 						<td>Software</td>
 						<td><%= softwares_qty %></td>
-						<td>
-							<%= link_to softwares_path, class: "uk-button uk-button-mini uk-button-primary" do %>
-								<i class="uk-icon-eye"></i>
-							<% end %>
-						</td>
 					</tr>
 					<tr>
 						<td>Network Device</td>
 						<td><%= network_devices_qty %></td>
-						<td>
-							<%= link_to network_devices_path, class: "uk-button uk-button-mini uk-button-primary" do %>
-								<i class="uk-icon-eye"></i>
-							<% end %>
-						</td>
 					</tr>
 				</tbody>
 			</table>

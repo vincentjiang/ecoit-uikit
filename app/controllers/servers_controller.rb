@@ -25,6 +25,7 @@ class ServersController < ApplicationController
   # POST /servers.json
   def create
     @server = Server.new(server_params)
+    @server.user_id = current_user.id
 
     respond_to do |format|
       if @server.save
@@ -69,6 +70,6 @@ class ServersController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def server_params
-      params.require(:server).permit(:name, :ip, :ilo, :brand, :model, :sn, :cup, :ram, :local_disk, :os, :place, :position, :service_expired_day, :function, :remark, :user_id)
+      params.require(:server).permit(:name, :ip, :ilo, :brand, :model, :sn, :cpu, :ram, :local_disk, :os, :place, :position, :service_expired_day, :function, :remark)
     end
 end

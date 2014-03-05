@@ -1,35 +1,43 @@
-<h1>Listing systems</h1>
+<%= provide :title, "Listing systems" %>
 
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Link</th>
-      <th>Username</th>
-      <th>Password</th>
-      <th>User</th>
-      <th></th>
-      <th></th>
-      <th></th>
-    </tr>
-  </thead>
+<div id="users-list" class="uk-container uk-container-center">
+  
+  <div class="uk-grid">
+    
+    <div class="eco-sidebar uk-width-medium-1-4">
 
-  <tbody>
-    <% @systems.each do |system| %>
-      <tr>
-        <td><%= system.name %></td>
-        <td><%= system.link %></td>
-        <td><%= system.username %></td>
-        <td><%= system.password %></td>
-        <td><%= system.user_id %></td>
-        <td><%= link_to 'Show', system %></td>
-        <td><%= link_to 'Edit', edit_system_path(system) %></td>
-        <td><%= link_to 'Destroy', system, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+      <%= render 'assets/sidebar' %>
 
-<br>
+    </div>
 
-<%= link_to 'New System', new_system_path %>
+    <div class="eco-main uk-width-medium-3-4">
+
+      <h1>Listing systems</h1>
+
+      <table class="uk-table uk-table-hover uk-table-striped uk-table-condensed">
+        <thead>
+          <tr>
+          <th>Name</th>
+          <th>Link</th>
+          <th>Account</th>
+          <th>Password</th>
+          <th>Action</th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <%= render @systems %>
+      </tbody>
+    </table>
+
+      <br>
+
+      <%= link_to new_system_path, class: "uk-button uk-button-large uk-button-success" do %>
+        New System <i class="uk-icon-arrow-circle-right"></i>
+      <% end %>
+
+    </div>
+
+  </div>
+
+</div>

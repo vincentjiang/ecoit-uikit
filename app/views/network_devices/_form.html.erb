@@ -1,4 +1,4 @@
-<%= form_for(@network_device) do |f| %>
+<%= form_for @network_device, html: { class: "uk-form" } do |f| %>
   <% if @network_device.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@network_device.errors.count, "error") %> prohibited this network_device from being saved:</h2>
@@ -11,47 +11,65 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= f.label :name %><br>
-    <%= f.text_field :name %>
+  <div class="uk-grid">
+    <div class="uk-width-medium-1-4">
+      <%= f.label :name %>
+      <%= f.text_field :name, class: "uk-width-1-1", placeholder: "Network device name" %>
+    </div>
+    <div class="uk-width-medium-1-4">
+      <%= f.label :kind %>
+      <%= f.text_field :kind, class: "uk-width-1-1", placeholder: "Network device kind" %>
+    </div>
   </div>
-  <div class="field">
-    <%= f.label :ip %><br>
-    <%= f.text_field :ip %>
+
+  <div class="uk-grid">
+    <div class="uk-width-medium-1-4">
+      <%= f.label :ip %>
+      <%= f.text_field :ip, class: "uk-width-1-1", placeholder: "IP Address" %>
+    </div>
   </div>
-  <div class="field">
-    <%= f.label :kind %><br>
-    <%= f.text_field :kind %>
+
+  <div class="uk-grid">
+    <div class="uk-width-medium-1-4">
+      <%= f.label :place %>
+      <%= f.text_field :place, class: "uk-width-1-1", placeholder: "Where is the network device" %>
+    </div>
+    <div class="uk-width-medium-1-4">
+      <%= f.label :position %>
+      <%= f.text_field :position, class: "uk-width-1-1", placeholder: "Network device position" %>
+    </div>
   </div>
-  <div class="field">
-    <%= f.label :place %><br>
-    <%= f.text_field :place %>
+
+  <div class="uk-grid">
+    <div class="uk-width-medium-1-4">
+      <%= f.label :sn %>
+      <%= f.text_field :sn, class: "uk-width-1-1", placeholder: "Serial Number" %>
+    </div>
+    <div class="uk-width-medium-1-4">
+      <%= f.label :service_expired_day %>
+      <%= f.date_field :service_expired_day, class: "uk-width-1-1", placeholder: "yyyy-mm-dd" %>
+    </div>
   </div>
-  <div class="field">
-    <%= f.label :position %><br>
-    <%= f.text_field :position %>
+
+  <div class="uk-grid">
+    <div class="uk-width-medium-2-3">
+      <%= f.label :function %>
+      <%= f.text_area :function, class: "uk-width-1-1", rows: 5, placeholder: "Let's know what the network device work for" %>
+    </div>
   </div>
-  <div class="field">
-    <%= f.label :sn %><br>
-    <%= f.text_field :sn %>
+
+  <div class="uk-grid">
+    <div class="uk-width-medium-2-3">
+      <%= f.label :remark %>
+      <%= f.text_area :remark, class: "uk-width-1-1", rows: 5, placeholder: "Some remark optional" %>
+    </div>
   </div>
-  <div class="field">
-    <%= f.label :service_expired_day %><br>
-    <%= f.date_select :service_expired_day %>
+
+  <div class="uk-grid">
+    <div class="uk-width-medium-1-2">
+      <%= f.submit class: "uk-button uk-button-large uk-button-primary" %>
+      <%= link_to 'Back', servers_path, class: "uk-button uk-button-link" %>
+    </div>
   </div>
-  <div class="field">
-    <%= f.label :function %><br>
-    <%= f.text_area :function %>
-  </div>
-  <div class="field">
-    <%= f.label :remark %><br>
-    <%= f.text_area :remark %>
-  </div>
-  <div class="field">
-    <%= f.label :user_id %><br>
-    <%= f.number_field :user_id %>
-  </div>
-  <div class="actions">
-    <%= f.submit %>
-  </div>
+
 <% end %>

@@ -25,6 +25,7 @@ class SystemsController < ApplicationController
   # POST /systems.json
   def create
     @system = System.new(system_params)
+    @system.user_id = current_user.id
 
     respond_to do |format|
       if @system.save

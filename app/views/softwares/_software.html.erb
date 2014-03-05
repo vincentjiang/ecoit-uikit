@@ -1,0 +1,17 @@
+<tr>
+  <td><%= software.name %></td>
+  <td><%= software.kind %></td>
+  <td><%= software.sn %></td>
+  <td><%= software.service_expired_day %></td>
+  <td>
+    <%= link_to software, class: "uk-button uk-button-success uk-button-mini" do %>
+      <i class="uk-icon-eye"></i>
+    <% end %>
+    <%= link_to edit_software_path(software), class: "uk-button uk-button-primary uk-button-mini" do %>
+      <i class="uk-icon-pencil"></i>
+    <% end %>
+    <%= link_to software, method: :delete, data: { confirm: "Are you sure to delete software #{software.name} ?" }, class: "uk-button uk-button-danger uk-button-mini" do %>
+      <i class="uk-icon-trash-o"></i>
+    <% end %>
+  </td>
+</tr>

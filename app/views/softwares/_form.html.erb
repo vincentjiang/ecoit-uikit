@@ -1,4 +1,5 @@
-<%= form_for(@software) do |f| %>
+<%= form_for @software, html: { class: "uk-form" } do |f| %>
+
   <% if @software.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@software.errors.count, "error") %> prohibited this software from being saved:</h2>
@@ -11,35 +12,47 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= f.label :name %><br>
-    <%= f.text_field :name %>
+  <div class="uk-grid">
+    <div class="uk-width-medium-1-4">
+      <%= f.label :name %>
+      <%= f.text_field :name, class: "uk-width-1-1", placeholder: "Software name" %>
+    </div>
+    <div class="uk-width-medium-1-4">
+      <%= f.label :kind %>
+      <%= f.text_field :kind, class: "uk-width-1-1", placeholder: "Software kind" %>
+    </div>
   </div>
-  <div class="field">
-    <%= f.label :kind %><br>
-    <%= f.text_field :kind %>
+
+  <div class="uk-grid">
+    <div class="uk-width-medium-1-4">
+      <%= f.label :sn %>
+      <%= f.text_field :sn, class: "uk-width-1-1", placeholder: "Serial number" %>
+    </div>
+    <div class="uk-width-medium-1-4">
+      <%= f.label :service_expired_day %>
+      <%= f.text_field :service_expired_day, class: "uk-width-1-1", placeholder: "yyyy-mm-dd" %>
+    </div>
   </div>
-  <div class="field">
-    <%= f.label :sn %><br>
-    <%= f.text_field :sn %>
+
+  <div class="uk-grid">
+    <div class="uk-width-medium-2-3">
+      <%= f.label :function %>
+      <%= f.text_area :function, class: "uk-width-1-1", rows: 5, placeholder: "Let's know what the software work for" %>
+    </div>
   </div>
-  <div class="field">
-    <%= f.label :service_expired_day %><br>
-    <%= f.date_select :service_expired_day %>
+
+  <div class="uk-grid">
+    <div class="uk-width-medium-2-3">
+      <%= f.label :remark %>
+      <%= f.text_area :remark, class: "uk-width-1-1", rows: 5, placeholder: "Some remark optional" %>
+    </div>
   </div>
-  <div class="field">
-    <%= f.label :function %><br>
-    <%= f.text_area :function %>
+
+  <div class="uk-grid">
+    <div class="uk-width-medium-1-2">
+      <%= f.submit class: "uk-button uk-button-large uk-button-primary" %>
+      <%= link_to 'Back', softwares_path, class: "uk-button uk-button-link" %>
+    </div>
   </div>
-  <div class="field">
-    <%= f.label :remark %><br>
-    <%= f.text_area :remark %>
-  </div>
-  <div class="field">
-    <%= f.label :user_id %><br>
-    <%= f.number_field :user_id %>
-  </div>
-  <div class="actions">
-    <%= f.submit %>
-  </div>
+
 <% end %>

@@ -35,7 +35,7 @@ ActiveRecord::Schema.define(version: 20140304092352) do
     t.string   "brand"
     t.string   "model"
     t.string   "sn"
-    t.string   "cup"
+    t.string   "cpu"
     t.string   "ram"
     t.string   "local_disk"
     t.string   "os"

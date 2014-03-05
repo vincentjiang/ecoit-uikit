@@ -1,45 +1,44 @@
-<h1>Listing network_devices</h1>
+<%= provide :title, "Listing network_device" %>
 
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Ip</th>
-      <th>Kind</th>
-      <th>Place</th>
-      <th>Position</th>
-      <th>Sn</th>
-      <th>Service expired day</th>
-      <th>Function</th>
-      <th>Remark</th>
-      <th>User</th>
-      <th></th>
-      <th></th>
-      <th></th>
-    </tr>
-  </thead>
+<div id="users-list" class="uk-container uk-container-center">
+  
+  <div class="uk-grid">
+    
+    <div class="eco-sidebar uk-width-medium-1-4">
 
-  <tbody>
-    <% @network_devices.each do |network_device| %>
-      <tr>
-        <td><%= network_device.name %></td>
-        <td><%= network_device.ip %></td>
-        <td><%= network_device.kind %></td>
-        <td><%= network_device.place %></td>
-        <td><%= network_device.position %></td>
-        <td><%= network_device.sn %></td>
-        <td><%= network_device.service_expired_day %></td>
-        <td><%= network_device.function %></td>
-        <td><%= network_device.remark %></td>
-        <td><%= network_device.user_id %></td>
-        <td><%= link_to 'Show', network_device %></td>
-        <td><%= link_to 'Edit', edit_network_device_path(network_device) %></td>
-        <td><%= link_to 'Destroy', network_device, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+      <%= render 'assets/sidebar' %>
 
-<br>
+    </div>
 
-<%= link_to 'New Network device', new_network_device_path %>
+    <div class="eco-main uk-width-medium-3-4">
+
+      <h1>Listing network_device</h1>
+
+      <table class="uk-table uk-table-hover uk-table-striped uk-table-condensed">
+        <thead>
+          <tr>
+          <th>Name</th>
+          <th>Kind</th>
+          <th>IP</th>
+          <th>SN</th>
+          <th>Service expired day</th>
+          <th>Action</th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <%= render @network_devices %>
+      </tbody>
+    </table>
+
+      <br>
+
+      <%= link_to new_network_device_path, class: "uk-button uk-button-large uk-button-success" do %>
+        New network_device <i class="uk-icon-arrow-circle-right"></i>
+      <% end %>
+
+    </div>
+
+  </div>
+
+</div>

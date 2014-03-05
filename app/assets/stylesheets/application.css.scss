@@ -39,6 +39,21 @@
 		}
 	}
 
+	.eco-sidebar {
+		ul li {
+			background: #fff;
+			color: #777;
+			&:hover a {
+				background-color: #eee;
+				color: #000;
+			}
+			&.uk-active a {
+				background: #eee;
+				color: #000;
+			}
+		}
+	}
+
 	.eco-main {
 		border-left: 1px solid #E5E5E5;
 	}
@@ -48,12 +63,24 @@
 		margin-bottom: 10px;
 	}
 
-	thead>tr>td {
+	thead>tr>th {
 		background-color: #ccc;
 		font-weight: bolder;
 	}
+	
+	.go-top {
+		position: fixed;
+		background-color: #3dc0f1;
+		bottom: 80px;
+		right: 50px;
+		&:hover {
+			background-color: #2ba3d4;
+		}
+	}
 
 }
+
+
 
 .footer {
 	padding-top: 20px;

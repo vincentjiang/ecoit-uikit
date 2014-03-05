@@ -1,0 +1,17 @@
+<tr>
+  <td><%= server.name %></td>
+  <td><%= server.ip %></td>
+  <td><%= server.sn %></td>
+  <td><%= server.service_expired_day %></td>
+  <td>
+    <%= link_to server, class: "uk-button uk-button-success uk-button-mini" do %>
+      <i class="uk-icon-eye"></i>
+    <% end %>
+    <%= link_to edit_server_path(server), class: "uk-button uk-button-primary uk-button-mini" do %>
+      <i class="uk-icon-pencil"></i>
+    <% end %>
+    <%= link_to server, method: :delete, data: { confirm: "Are you sure to delete server #{server.name} ?" }, class: "uk-button uk-button-danger uk-button-mini" do %>
+      <i class="uk-icon-trash-o"></i>
+    <% end %>
+  </td>
+</tr>

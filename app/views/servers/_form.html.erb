@@ -1,4 +1,5 @@
-<%= form_for(@server) do |f| %>
+<%= form_for @server, html: { class: "uk-form" } do |f| %>
+
   <% if @server.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@server.errors.count, "error") %> prohibited this server from being saved:</h2>
@@ -10,72 +11,96 @@
       </ul>
     </div>
   <% end %>
+  
+  <div class="uk-grid">
+    <div class="uk-width-medium-1-4">
+      <%= f.label :name %>
+      <%= f.text_field :name, class: "uk-width-1-1", placeholder: "Server name" %>
+    </div>
+    <div class="uk-width-medium-1-4">
+      <%= f.label :os %>
+      <%= f.text_field :os, class: "uk-width-1-1", placeholder: "Operation system" %>
+    </div>
+  </div>
 
-  <div class="field">
-    <%= f.label :name %><br>
-    <%= f.text_field :name %>
+  <div class="uk-grid">
+    <div class="uk-width-medium-1-4">
+      <%= f.label :ip %>
+      <%= f.text_field :ip, class: "uk-width-1-1", placeholder: "IP Address" %>
+    </div>
+    <div class="uk-width-medium-1-4">
+      <%= f.label :ilo %>
+      <%= f.text_field :ilo, class: "uk-width-1-1", placeholder: "iLO Address" %>
+    </div>
   </div>
-  <div class="field">
-    <%= f.label :ip %><br>
-    <%= f.text_field :ip %>
+
+  <div class="uk-grid">
+    <div class="uk-width-medium-1-4">
+      <%= f.label :brand %>
+      <%= f.text_field :brand, class: "uk-width-1-1", placeholder: "IBM / HP / DELL ......" %>
+    </div>
+    <div class="uk-width-medium-1-4">
+      <%= f.label :model %>
+      <%= f.text_field :model, class: "uk-width-1-1", placeholder: "Server model" %>
+    </div>
   </div>
-  <div class="field">
-    <%= f.label :ilo %><br>
-    <%= f.text_field :ilo %>
+
+  <div class="uk-grid">
+    <div class="uk-width-medium-1-4">
+      <%= f.label :cpu %>
+      <%= f.text_field :cpu, class: "uk-width-1-1", placeholder: "CPU detail" %>
+    </div>
+    <div class="uk-width-medium-1-4">
+      <%= f.label :ram %>
+      <%= f.text_field :ram, class: "uk-width-1-1", placeholder: "Ram size" %>
+    </div>
+    <div class="uk-width-medium-1-4">
+      <%= f.label :local_disk %>
+      <%= f.text_field :local_disk, class: "uk-width-1-1", placeholder: "Local harddisk size" %>
+    </div>
   </div>
-  <div class="field">
-    <%= f.label :brand %><br>
-    <%= f.text_field :brand %>
+
+  <div class="uk-grid">
+    <div class="uk-width-medium-1-4">
+      <%= f.label :place %>
+      <%= f.text_field :place, class: "uk-width-1-1", placeholder: "Where is the server" %>
+    </div>
+    <div class="uk-width-medium-1-4">
+      <%= f.label :position %>
+      <%= f.text_field :position, class: "uk-width-1-1", placeholder: "Server position" %>
+    </div>
   </div>
-  <div class="field">
-    <%= f.label :model %><br>
-    <%= f.text_field :model %>
+
+  <div class="uk-grid">
+    <div class="uk-width-medium-1-4">
+      <%= f.label :sn %>
+      <%= f.text_field :sn, class: "uk-width-1-1", placeholder: "Serial Number" %>
+    </div>
+    <div class="uk-width-medium-1-4">
+      <%= f.label :service_expired_day %>
+      <%= f.date_field :service_expired_day, class: "uk-width-1-1", placeholder: "yyyy-mm-dd" %>
+    </div>
   </div>
-  <div class="field">
-    <%= f.label :sn %><br>
-    <%= f.text_field :sn %>
+
+  <div class="uk-grid">
+    <div class="uk-width-medium-2-3">
+      <%= f.label :function %>
+      <%= f.text_area :function, class: "uk-width-1-1", rows: 5, placeholder: "Let's know what the server work for" %>
+    </div>
   </div>
-  <div class="field">
-    <%= f.label :cup %><br>
-    <%= f.text_field :cup %>
+
+  <div class="uk-grid">
+    <div class="uk-width-medium-2-3">
+      <%= f.label :remark %>
+      <%= f.text_area :remark, class: "uk-width-1-1", rows: 5, placeholder: "Some remark optional" %>
+    </div>
   </div>
-  <div class="field">
-    <%= f.label :ram %><br>
-    <%= f.text_field :ram %>
+
+  <div class="uk-grid">
+    <div class="uk-width-medium-1-2">
+      <%= f.submit class: "uk-button uk-button-large uk-button-primary" %>
+      <%= link_to 'Back', servers_path, class: "uk-button uk-button-link" %>
+    </div>
   </div>
-  <div class="field">
-    <%= f.label :local_disk %><br>
-    <%= f.text_field :local_disk %>
-  </div>
-  <div class="field">
-    <%= f.label :os %><br>
-    <%= f.text_field :os %>
-  </div>
-  <div class="field">
-    <%= f.label :place %><br>
-    <%= f.text_field :place %>
-  </div>
-  <div class="field">
-    <%= f.label :position %><br>
-    <%= f.text_field :position %>
-  </div>
-  <div class="field">
-    <%= f.label :service_expired_day %><br>
-    <%= f.date_select :service_expired_day %>
-  </div>
-  <div class="field">
-    <%= f.label :function %><br>
-    <%= f.text_area :function %>
-  </div>
-  <div class="field">
-    <%= f.label :remark %><br>
-    <%= f.text_area :remark %>
-  </div>
-  <div class="field">
-    <%= f.label :user_id %><br>
-    <%= f.number_field :user_id %>
-  </div>
-  <div class="actions">
-    <%= f.submit %>
-  </div>
+
 <% end %>

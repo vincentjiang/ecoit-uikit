@@ -36,7 +36,8 @@ class UsersController < ApplicationController
 			if params[:user][:password_new].present?
         if params[:user][:password_new] == params[:user][:password_new_confirmation]
   				if @user.update( email: params[:user][:email], admin: params[:user][:admin], password: params[:user][:password_new] )
-  	  			if current_user.admin
+  	  			User.write_json
+            if current_user.admin
   	  				redirect_to users_path, notice: "User #{@user.username} update successfully!"
   	  			else
   	  				redirect_to root_path, notice: "User #{@user.username} update successfully!"
@@ -67,6 +68,7 @@ class UsersController < ApplicationController
   	@user = User.find(params[:id])
   	respond_to do |format|
   		@user.destroy
+      User.write_json
   		format.html { redirect_to users_path, notice: "User #{@user.username} delete successfully!" }
   	end
   end

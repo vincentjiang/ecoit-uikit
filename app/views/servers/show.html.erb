@@ -1,84 +1,107 @@
-<p id="notice"><%= notice %></p>
+<%= provide :title, "Server-#{@server.name}" %>
 
-<p>
-  <strong>Name:</strong>
-  <%= @server.name %>
-</p>
+<h1>Show server</h1>
 
-<p>
-  <strong>Ip:</strong>
-  <%= @server.ip %>
-</p>
+<hr>
 
-<p>
-  <strong>Ilo:</strong>
-  <%= @server.ilo %>
-</p>
+<dl class="uk-grid">
+  <div class="uk-width-medium-1-4">
+    <dt>Server Name</dt>
+    <dd><%= @server.name %></dd>
+  </div>
+  <div class="uk-width-medium-1-4">  
+    <dt>Operation system</dt>
+    <dd><%= @server.os %></dd>
+  </div>
+</dl>
 
-<p>
-  <strong>Brand:</strong>
-  <%= @server.brand %>
-</p>
+<dl class="uk-grid">
+  <div class="uk-width-medium-1-4">
+    <dt>IP Address</dt>
+    <dd><%= @server.ip %></dd>
+  </div>
+  <div class="uk-width-medium-1-4">  
+    <dt>iLO Address</dt>
+    <dd><%= @server.ilo %></dd>
+  </div>
+</dl>
 
-<p>
-  <strong>Model:</strong>
-  <%= @server.model %>
-</p>
+<dl class="uk-grid">
+  <div class="uk-width-medium-1-4">
+    <dt>Server brand</dt>
+    <dd><%= @server.brand %></dd>
+  </div>
+  <div class="uk-width-medium-1-4">  
+    <dt>Server model</dt>
+    <dd><%= @server.model %></dd>
+  </div>
+</dl>
 
-<p>
-  <strong>Sn:</strong>
-  <%= @server.sn %>
-</p>
+<dl class="uk-grid">
+  <div class="uk-width-medium-1-4">
+    <dt>CPU</dt>
+    <dd><%= @server.cpu %></dd>
+  </div>
+  <div class="uk-width-medium-1-4">  
+    <dt>Ram</dt>
+    <dd><%= @server.ram %></dd>
+  </div>
+  <div class="uk-width-medium-1-4">  
+    <dt>Local disk</dt>
+    <dd><%= @server.local_disk %></dd>
+  </div>
+</dl>
 
-<p>
-  <strong>Cup:</strong>
-  <%= @server.cup %>
-</p>
+<dl class="uk-grid">
+  <div class="uk-width-medium-1-4">
+    <dt>Place</dt>
+    <dd><%= @server.place %></dd>
+  </div>
+  <div class="uk-width-medium-1-4">  
+    <dt>Position</dt>
+    <dd><%= @server.position %></dd>
+  </div>
+</dl>
 
-<p>
-  <strong>Ram:</strong>
-  <%= @server.ram %>
-</p>
+<dl class="uk-grid">
+  <div class="uk-width-medium-1-4">
+    <dt>Serial number</dt>
+    <dd><%= @server.sn %></dd>
+  </div>
+  <div class="uk-width-medium-1-4">  
+    <dt>Service expired day</dt>
+    <dd><%= @server.service_expired_day %></dd>
+  </div>
+</dl>
 
-<p>
-  <strong>Local disk:</strong>
-  <%= @server.local_disk %>
-</p>
+<% if @server.function.present? %>
+  <dl class="uk-grid">
+    <div class="uk-width-medium-1-2">
+      <dt>Function</dt>
+      <dd><%= @server.function %></dd>
+    </div>
+  </dl>
+<% end %>
 
-<p>
-  <strong>Os:</strong>
-  <%= @server.os %>
-</p>
+<% if @server.remark.present? %>
+  <dl class="uk-grid">
+    <div class="uk-width-medium-1-2">
+      <dt>Remark</dt>
+      <dd><%= @server.remark %></dd>
+    </div>
+  </dl>
+<% end %>
 
-<p>
-  <strong>Place:</strong>
-  <%= @server.place %>
-</p>
+<dl class="uk-grid">
+  <div class="uk-width-medium-1-4">
+    <dt>Create by</dt>
+    <dd><%= @server.user.username %></dd>
+  </div>
+</dl>
 
-<p>
-  <strong>Position:</strong>
-  <%= @server.position %>
-</p>
+<br>
 
-<p>
-  <strong>Service expired day:</strong>
-  <%= @server.service_expired_day %>
-</p>
-
-<p>
-  <strong>Function:</strong>
-  <%= @server.function %>
-</p>
-
-<p>
-  <strong>Remark:</strong>
-  <%= @server.remark %>
-</p>
-
-<p>
-  <strong>User:</strong>
-  <%= @server.user_id %>
-</p>
-
-<%= link_to 'Edit', edit_server_path(@server) %> |
-<%= link_to 'Back', servers_path %>
+<%= link_to edit_server_path(@server), class: "uk-button uk-button-success" do %>
+  Edit <i class="uk-icon-pencil"></i>
+<% end %>
+<%= link_to 'Back', servers_path, class: "uk-button uk-button-link" %>
