@@ -12,6 +12,10 @@
  *= require_tree .
  */
 
+ body {
+ 	background-color: #ccc !important;
+ }
+
 .content {
 	background-color: #ffffff;
 	min-height: 450px;
@@ -83,12 +87,19 @@
 
 
 .footer {
+	min-height: 100px;
+	color: #000;
 	padding-top: 20px;
+	.uk-container a {
+		background-color: #ccc;
+		color: #000;
+	}
 	ul li a {
-		color: #aaaaaa;
+		background-color: #ccc;
+		color: #000;
 		&:hover {
-			color: #ffffff;
-			text-decoration: none;
+			background-color: #ccc;
+			color: #000;
 		}
 	}
 }

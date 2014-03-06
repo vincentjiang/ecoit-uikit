@@ -1,51 +1,47 @@
 <!DOCTYPE html>
 <html lang="zh-cn">
-<head>
-	<meta charset="utf-8" />
+	<head>
+		<meta charset="utf-8" />
 
-  <%= favicon_link_tag 'towngas_logo.jpg' %>
+	  <%= favicon_link_tag 'towngas_logo.jpg' %>
 
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+	  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title><%= content_for?(:title) ? yield(:title) : "ECO IT System" %></title>
+	  <title><%= content_for?(:title) ? yield(:title) : "ECO IT System" %></title>
 
-  <meta name="description" content="<%= content_for?(:description) ? yield(:description) : "Ecoit" %>">
-  <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
-  <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
-  <%= csrf_meta_tags %>
-</head>
-<body>
+	  <meta name="description" content="<%= content_for?(:description) ? yield(:description) : "Ecoit" %>">
+	  <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
+	  <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
+	  <%= csrf_meta_tags %>
+	</head>
+	<body>
 
-	<div class="header">
-		<%= render 'layouts/navigation' %>
-	</div>
-	
-	<div class="content">
-		<div class="uk-container uk-container-center">
-
-			<%= render 'layouts/messages' %>
-
-			<div class="main">
-				<%= yield %>
-			</div>
-
-			<a href="#top" class="uk-icon-button go-top" data-uk-smooth-scroll>
-				<i class="uk-icon-arrow-up"></i>
-			</a>
-			
+		<div class="header">
+			<%= render 'layouts/navigation' %>
 		</div>
-	</div>
-
-	<%= debug(params) if Rails.env.development? %>
 		
-	<div class="footer">
-		<%= render 'layouts/footer' %>
-	</div>
+		<div class="content">
+			<div class="uk-container uk-container-center">
 
-	<script type="text/javascript">
-	
-	</script>
+				<%= render 'layouts/messages' %>
 
-</body>
+				<div class="main">
+					<%= yield %>
+				</div>
+
+				<a href="#top" class="uk-icon-button go-top" data-uk-smooth-scroll>
+					<i class="uk-icon-arrow-up"></i>
+				</a>
+				
+			</div>
+		</div>
+
+		<%= debug(params) if Rails.env.development? %>
+			
+		<div class="footer">
+			<%= render 'layouts/footer' %>
+		</div>
+
+	</body>
 </html>
