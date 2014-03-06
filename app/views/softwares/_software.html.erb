@@ -1,8 +1,8 @@
 <tr>
   <td><%= software.name %></td>
-  <td><%= software.kind %></td>
-  <td><%= software.sn %></td>
-  <td><%= software.service_expired_day %></td>
+  <td class="uk-hidden-small"><%= software.kind %></td>
+  <td class="uk-hidden-small"><%= software.sn %></td>
+  <td class="uk-hidden-small"><%= software.service_expired_day %></td>
   <td>
     <%= link_to software, class: "uk-button uk-button-success uk-button-mini" do %>
       <i class="uk-icon-eye"></i>

@@ -1,9 +1,9 @@
 <tr>
   <td><%= network_device.name %></td>
-  <td><%= network_device.kind %></td>
-  <td><%= network_device.ip %></td>
-  <td><%= network_device.sn %></td>
-  <td><%= network_device.service_expired_day %></td>
+  <td class="uk-hidden-small"><%= network_device.kind %></td>
+  <td class="uk-hidden-small"><%= network_device.ip %></td>
+  <td class="uk-hidden-small"><%= network_device.sn %></td>
+  <td class="uk-hidden-small"><%= network_device.service_expired_day %></td>
   <td>
     <%= link_to network_device, class: "uk-button uk-button-success uk-button-mini" do %>
       <i class="uk-icon-eye"></i>

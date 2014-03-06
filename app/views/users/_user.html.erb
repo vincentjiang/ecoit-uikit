@@ -1,7 +1,7 @@
 <tr>
 	<td><%= user.username %></td>
-	<td><%= user.email %></td>
-	<td><%= user.admin? ? "Admin" : "Common User" %></td>
+	<td class="uk-hidden-small"><%= user.email %></td>
+	<td class="uk-hidden-small"><%= user.admin? ? "Admin" : "Common User" %></td>
 	<td>
 		<%= link_to edit_user_path(user), class: "uk-button uk-button-mini uk-button-primary" do %>
 			<i class="uk-icon-pencil"></i>

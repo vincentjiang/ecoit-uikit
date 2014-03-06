@@ -1,8 +1,8 @@
 <tr>
   <td><%= server.name %></td>
-  <td><%= server.ip %></td>
-  <td><%= server.sn %></td>
-  <td><%= server.service_expired_day %></td>
+  <td class="uk-hidden-small"><%= server.ip %></td>
+  <td class="uk-hidden-small"><%= server.sn %></td>
+  <td class="uk-hidden-small"><%= server.service_expired_day %></td>
   <td>
     <%= link_to server, class: "uk-button uk-button-success uk-button-mini" do %>
       <i class="uk-icon-eye"></i>
