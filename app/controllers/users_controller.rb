@@ -14,6 +14,7 @@ class UsersController < ApplicationController
   	@user = User.new(params.require(:user).permit(:email, :username, :admin, :password, :passowrd_confirmation))
   	respond_to do |format|
   		if @user.save
+        Mailer.welcome(@user).deliver
 	  		format.html { redirect_to users_path, notice: "User #{@user.username} create successfully!" }
 	  	else
         flash.now[:alert] = "User create fail"
